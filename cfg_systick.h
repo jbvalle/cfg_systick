@@ -29,4 +29,13 @@ typedef struct{
 } SysTick_ConfigType;
 
 extern const SysTick_ConfigType SysTickConfig;
+
+
+/* Number of SysTick “channels” (we can treat each tick as a channel) */
+#define SYSTICK_CHANNEL_COUNT 1u
+/* Typedef for callback */
+typedef void (* SysTick_CallbackType)(void);
+/* Extern notification functions (to be implemented in config or application) */
+extern void SysTick_Callback_Channel0(void);
+
 #endif
